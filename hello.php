@@ -41,10 +41,13 @@ if ($command && $port){
 
 var_dump($messages);
 
-// [POST] # 请求地址: http://charge.51mrp.com/code-open-plat/charge/request.do
-// {"phone":"18332740300","imsi":"460025327751982","imei":"865389030316674","ip":"106.116.224.184","price":2000,"payPoint":"3","linkId":"nxbzpmWl1k","appId":"7012985","merchantId":"21778","appName":"\u8d2a\u5403\u86c7\u5927\u4f5c\u6218","payPointName":"\u9053\u5177\u793c\u5305","payMethod":"2","codeType":"7","notifyUrl":"http:\/\/data.maimob.cn\/index.php\/Out\/CMP\/ss\/sQWRKqZQsp","channelId":"daji_123456","mac":"1a:2a:3a:4a","provinceCode":"50000","orderTime":"20180412144556","md5":"15353AAB410A5F52670C4B6B3328397C"}
-// {"status":"OK","payId":"20180412beJV039178","codeOrderId":"1jfw5trdtj","payMethod":"1","commonPayOpts":[{"paySmsInfo":{"smsPort":"1065842232","smsContent":"{base64}Qk4yW2JER0d6SEdjS2xcO2hiR0NLREd6T0hfemJiRmxHQTpDX0R2JEZMM3p2cGwzUjxiNyxHWUg2UWJ1ZGIwcU5iekh6RHhGRmI+Y2ImMGJiYlBmTiVmbWFSQFFDV099N0UxVXVIMmVxR1ItbEg9"}},{"paySmsInfo":{"smsPort":"10658423","smsContent":"mvwlan,c571866d877bf68e94d10e9ba5586487,T1t5"}}]}
+// 2018-05-01 15:01:03 > [eDlyez558z81n9C2crv7aax7]#   [GET] # 请求地址: http://112.74.141.3:8001/receipt/jsp/hqyx_service.jsp?
+//orderId=nF6rhkzbOT&verifycode=517434&action=verify&channel=A002
+// 2018-05-01 15:01:03 > 请求响应结果: {"resultCode":"0010","linkId":"","resultMsg":"error!, 没有配置，请联系我们。"}
+// 2018-05-01 15:01:03 > [eDlyez558z81n9C2crv7aax7]# 提交验证码API请求失败
 
+
+//http://112.74.141.3:8001/receipt/jsp/hqyx_service.jsp?action=verify&channel=A002&pay=a002hqyx151139
 
 $m = '["<response><status>0<\/status><transIDO>15222888CXAc<\/transIDO><ConumeCode>UMPAYDG1500<\/ConumeCode><amount>1500<\/amount><serviceCode>888888888<\/serviceCode><phone>15264903619<\/phone><cParam>3zzLYCXAc<\/cParam><\/response>"]';
 
@@ -69,4 +72,14 @@ var_dump(date('Y-m-d 00:00:00', strtotime('-1 day')));
 
 var_dump(date('Y-m-d 00:00:00', strtotime('-1 month')));
 
+var_dump(urldecode('YX%2C246673%2C4%2C2424%2C1812726%2C621007%2C201201LcVB8FLlrA000006'));
+
+$wt = substr('460003739786411', -12);
+var_dump($wt);
+
+var_dump(base64_decode('131000OH000001B002LS001P017232106LIWiQ'));
+
+echo strlen('2018-05-09 07:02:03 > [') . "\n";
+echo strlen(']# 提交验证码API请求成功') . "\n";
+echo strlen('4h8gyA6p4aub1l65ivtrvaba') . "\n";
 ?>
