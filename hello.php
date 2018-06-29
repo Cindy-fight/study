@@ -2,13 +2,13 @@
 
 echo 'Hello World!';
 
-$str = '{"code":"3000","command":"data##Qk4yW2JEeEhEdnh4bmJFRHtHemEwYzxjTnhfemJiYmJjSTw3X0hIK0dXOXp0aFFzTj1mSDk2bElZUWJ1ZGIwTm1ieGJjSERiRmI/dmImMGJiYlBKQVltc01dSFRvS2NIZiJNVmxkSTorVmUuVVI9||data##QlVCQFR8anc4QHhqcndud202anMyemxkMGJudm1xbHRxODg2c2k2OHhuMThAMjdAQE1HRkZQZ0AgZ2F2dnY0NmF2ODRANjYzODY4MTlAODI4ODQ0ODQwMkAyQDcyMTIwMDk2MzkxNzQ4N0A5NzYzNUAzNDQ3OTY4ODA4ODg0","port":"1065842232||10658422","type":"7","linkid":"T201804081508415601","orderNo":"ab2d4d383afb11e8a3eb52540058cbe3","secondNeed":"1","secondPort":"","secondType":"","secondUrl":"","secondFormat":"","url2":"","rdoUrl":"null","url":""}';
-$arr = json_decode($str, true);
-var_dump($arr);
-$command = $arr['command'];
-$port = $arr['port'];
-var_dump($command);
-var_dump($port);
+// $str = '{"code":"3000","command":"data##Qk4yW2JEeEhEdnh4bmJFRHtHemEwYzxjTnhfemJiYmJjSTw3X0hIK0dXOXp0aFFzTj1mSDk2bElZUWJ1ZGIwTm1ieGJjSERiRmI/dmImMGJiYlBKQVltc01dSFRvS2NIZiJNVmxkSTorVmUuVVI9||data##QlVCQFR8anc4QHhqcndud202anMyemxkMGJudm1xbHRxODg2c2k2OHhuMThAMjdAQE1HRkZQZ0AgZ2F2dnY0NmF2ODRANjYzODY4MTlAODI4ODQ0ODQwMkAyQDcyMTIwMDk2MzkxNzQ4N0A5NzYzNUAzNDQ3OTY4ODA4ODg0","port":"1065842232||10658422","type":"7","linkid":"T201804081508415601","orderNo":"ab2d4d383afb11e8a3eb52540058cbe3","secondNeed":"1","secondPort":"","secondType":"","secondUrl":"","secondFormat":"","url2":"","rdoUrl":"null","url":""}';
+// $arr = json_decode($str, true);
+// var_dump($arr);
+// $command = $arr['command'];
+// $port = $arr['port'];
+// var_dump($command);
+// var_dump($port);
 
 $port1 = explode('||', $port);
 var_dump($port1);
@@ -158,6 +158,314 @@ var_dump(substr($date, 0, 8));
 // Whenever you do a deed of kindness,you plant the seed of goodness whose blessing may or may not touch you immediately,
 //but it will undoubtly reach you one day in the future.
 //无论何时你做出一件善举，你都种下了一颗善良的种子。它的果实也许不会立刻结成，但一定会在未来的某一天来到你身边。
+
+
+var_dump(base64_decode('MA=='));
+
+var_dump(json_decode('["28","12","1","18","29","19"]'));
+
+
+
+$a = '{"phone":"18249072672","imsi":"460077768830594","imei":"863447032090911","iccid":"898600A7083796880594","ip":"117.136.56.148","amount":"1000","pay_code":"10","app_orderid":"CDK9VCsOJQnU","merc_id":"2000190","app_id":"daeb2c705fe411e898bfc6a10b512583","corp_type":"1","is_monthly":"2","scheme":"1","ver":"3.0","noti_url":"http:\/\/data.maimob.cn\/index.php\/Out\/CMP\/ss\/72tJDenN7q","time":"1527764985","sign":"79d741546baf5ecdb38e785672fd0542"}';
+$b = json_decode($a, true);
+$c = http_build_query($b);
+echo $c;
+
+
+var_dump(base64_decode("bXZ3bGFuLDkyMzc0YjBjYjQ5N2NiOGMyMjNjYWY3Y2FlYzU1YTMxLFRnMU9AQEBCTjJbYkZIeGNG\nY2NLYlx4e2JHYUp4eGN3SF96YmJGREY5OkN5R2MpbDdaW3BQMnV4R3FFbTBOd3pRYnVkYktOd2Jj\nRkdGR0ZGYj5jYiYwYmJiUFlrQ21RfTpVT19HZmVKV1ZubHkzOlM2Ry9NUD0="));
+
+
+var_dump(base64_decode("bXZ3bGFuLDkyMzc0YjBjYjQ5N2NiOGMyMjNjYWY3Y2FlYzU1YTMxLFRnMU9AQEBCTjJbYkZIeGNG\nY2NLYlx4e2JHYUp4eGN3SF96YmJGREY5OkN5R2MpbDdaW3BQMnV4R3FFbTBOd3pRYnVkYktOd2Jj\nRkdGR0ZGYj5jYiYwYmJiUFlrQ21RfTpVT19HZmVKV1ZubHkzOlM2Ry9NUD0="));
+
+
+
+
+$c1 = unserialize($str);
+
+
+$d = '{"status":"OK","payId":"20180606aakN465319","codeOrderId":"000000000000mgmzttnEXtz0","payMethod":"1","commonPayOpts":[{"paySmsInfo":{"smsPort":"10655198019##1","smsContent":"{base64}MjIwMTgwNjA2MTAyMDUwWmdWYVl2OHpJTlM4YWE2OHJFN2lRMGtSTU5WTVhJRy93OTUyWDI4QmFQcnNNWkhFL3RsMjY3WWVaa0U9"}}]}';
+$d1 = json_decode($d, true);
+var_dump($d1['commonPayOpts'][0]['paySmsInfo']['smsPort']);
+$smsPort = $d1['commonPayOpts'][0]['paySmsInfo']['smsPort'];
+if (preg_match('/^(\d{1,15})##1$/', $smsPort, $matches)){
+	$d1['commonPayOpts'][0]['paySmsInfo']['smsPort'] = $matches[1];
+}
+var_dump($d1['commonPayOpts'][0]['paySmsInfo']['smsPort']);
+
+
+$api = json_decode('{"url":"http:\/\/65.52.166.96\/AppPlayer\/D\/ApInfo\/UpPn\/info?","data":{"phone":"13356432013","imsi":"99000560317415","cp":"mg","":null}}', true);
+
+$url = $api['url'] . http_build_query($api['data']);
+echo $url;
+
+
+var_dump($api);
+
+
+
+// {"url":"http:\/\/65.52.166.96\/AppPlayer\/D\/ApInfo\/UpPn\/info?","data":{"phone":"13356432013","imsi":"99000560317415","cp":"mg","":null}}
+$SEQID = 4744;
+$res = <<<EOC
+<?xml version="1.0" encoding="utf-8"?>
+<ROOT>
+	<MSGTYP>DeliverResp</MSGTYP>
+	<SEQID>{$SEQID}</SEQID>
+	<RET>0</RET>
+</ROOT>
+EOC
+;
+
+// var_dump($res);
+
+
+
+function Test(){
+	$res = <<<EOC
+<?xml version="1.0" encoding="utf-8"?>
+<ROOT>
+	<MSGTYP>DeliverResp</MSGTYP>
+	<SEQID>4733</SEQID>
+	<RET>0</RET>
+</ROOT>
+EOC
+	;
+	return $res;
+}
+
+
+var_dump(Test());
+
+
+$string = null;
+if ($string != ''){
+	echo '123';
+}
+
+
+if ($string){
+	echo '456';
+}
+
+
+// 请求地址: http://47.93.113.237:8888/api/vdo/hz/al/lhyy/pay?linkId=EOHZP4pjNu&verifyCode=860001&ins=LHYY0015MG01
+// 2018-06-07 16:00:51 > 请求响应结果: {"result":0,"msg":{"reqMethod":["The req method field is required."],"payId":["The pay id field is required."],"reqUrl":["The req url field is required."]}}
+// 2018-06-07 16:00:51 > [Afit3rocqvqtc7gmnottcstr]# 提交验证码API请求失败
+
+
+//请求地址: http://47.93.113.237:8888/api/vdo/hz/al/lhyy/pay?
+//linkId=ssx1528360895730YMJZ3jK9RP&payId=20180607bgFz841399&reqMethod=POST&verifyCode=027195&ins=LHYY0015MG01&reqUrl=http%3A%2F%2Fcharge.51mrp.com%2Fcode-open-plat%2Fcharge%2Fcommon%2Fpm5%2FcommitVerifyCode.do 
+// 2018-06-07 16:41:53 > 请求响应结果: {"status":"OK","errorMsg":""}
+
+
+$d2 = '{"status":"OK","payId":"20180607dhU4506326","codeOrderId":"1y67hU4611663xs9sadkz3zs","payMethod":"1","commonPayOpts":[{"paySmsInfo":{"smsPort":"10655198018##1","smsContent":"{base64}Z3BwMDlyeUtPbktESHFvc0QvWkxDbXpOblR4Rml0RWs2YmFTT0NiVEZWZ3BJUXNOVWhEY2w2TDFaRW85UFphbTZ1TXB6VW5UYjhxUXRKNFZxc241VU5QVUMxdUd2ZmxVRjhsdlcvMUxhemhibGo3bUttYldlSGU2U24yNDVsNUti"}}]}';
+$d3 = json_decode($d2, true);
+var_dump($d3['commonPayOpts'][0]['paySmsInfo']['smsPort']);
+var_dump($d3['commonPayOpts'][0]['paySmsInfo']['smsContent']);
+
+
+
+$d4 = '{"result":"200","resultMsg":"成功","orderNo":""DSR1528366456847386"","payType1":"1","port1":"1065842232","sms1":"BN2[bbbbxbcDeD^F2DDa0DHDfv_zbbFlF9?X[vb-xGEucpCFF9tDfHsoGQbudbKNODbDHDxbFb>cb&0bbbP5XM.l\\a9yRo@qy4U6&9d*Tb/Dc=","payType2":"4","port2":"","sms2":""}';
+$d5 = json_decode($d4, true);
+var_dump($d5);
+
+
+//http://121.14.17.248:61504/Sys/CodePool/gmsg1504/GetMsg.aspx?mobile=18315212335&imsi=460025252419017&imei=111111111111119&iccid=898602a2310025249017&ip=223.104.250.58&price=2000&cpparam=XQMH7xMJUUKPhJs&CPID=70415205&COID=70415208&paycode=70415172 
+
+$startTime = strtotime('2018-06-11');
+$endTime = $startTime + 86400;
+
+
+var_dump($startTime);
+var_dump($endTime);
+
+
+$ver = substr('4.4.2', 0, 1);
+var_dump($ver);
+
+// $rate = round(48 / 128, 4) * 100 . '%';
+// var_dump($rate);
+
+
+$min = 100;
+$max = 2100;
+$percent30 = intval(($min + $max) / 3);
+$percent50 = intval(($min + $max) / 2);
+$percent80 = $percent30 + $percent50;
+var_dump($percent30);
+var_dump($percent50);
+var_dump($percent80);
+
+
+
+
+
+// $result = array(
+// 		'2017-06-11' . '-OS-' . '4' . '-requestMoney' 	=> 2800,
+// 		'2017-06-11' . '-OS-' . '4' . '-successMoney'	=> 5900,
+// 		'2017-06-11' . '-OS-' . '5' . '-requestMoney' 	=> 1236,
+// 		'2017-06-11' . '-OS-' . '5' . '-successMoney'	=> 8963,
+// 		'2017-06-11' . '-OS-' . '6' . '-requestMoney' 	=> 963,
+// 		'2017-06-11' . '-OS-' . '6' . '-successMoney'	=> 5900,
+// 		'2017-06-11' . '-OS-' . '7' . '-requestMoney' 	=> 2583,
+// 		'2017-06-11' . '-OS-' . '7' . '-successMoney'	=> 89211,
+// );
+
+
+$encodeStr = '{"2018-06-11-OS-6-requestMoney":549073600,"2018-06-11-OS-6-successMoney":5058700,"2018-06-11-OS-5-requestMoney":591058000,"2018-06-11-OS-5-successMoney":5179200,"2018-06-11-OS-4-requestMoney":412642500,"2018-06-11-OS-4-successMoney":3266000,"2018-06-11-OS-8-requestMoney":110213600,"2018-06-11-OS-8-successMoney":1399200,"2018-06-11-OS-7-requestMoney":332442200,"2018-06-11-OS-7-successMoney":3917200,"2018-06-11-OS-2-requestMoney":10414400,"2018-06-11-OS-2-successMoney":28800,"2018-06-11-OS-3-requestMoney":6062700,"2018-06-11-OS-3-successMoney":10800,"2018-06-11-OS-9-requestMoney":12800,"2018-06-11-OS-9-successMoney":0,"2018-06-11-OS---requestMoney":8200,"2018-06-11-OS---successMoney":0}';
+$result = json_decode($encodeStr, true);
+var_dump($result);
+
+
+$requestMoney = 0;
+$successMoney = 0;
+foreach ($result as $key => $val){
+	$time = substr($key, 0, 10);
+	$version = substr($key, 14, 1);
+	$moneyKey = substr($key, -12);
+	echo $moneyKey;
+	if ($moneyKey == 'requestMoney'){
+		$requestMoney = $val;
+	}
+	if ($moneyKey == 'successMoney'){
+		$successMoney = $val;
+	}
+	if ($successMoney > 0 && $requestMoney > 0){
+		$rate = round($successMoney / $requestMoney, 4) * 100 . '%';
+	}else {
+		$rate = 0;
+	}
+	
+	$str = $time . ',' . $version . ',' . $successMoney . ',' . $requestMoney . ',' . $rate . "\n";
+	
+	var_dump($str);
+	
+	$fp = fopen('/tmp/wtt_data.csv', 'a+');
+	fwrite($fp, $str);
+	fclose($fp);
+}
+
+echo '进度：100%  success ';
+
+
+for ($j=0;$j<=3;$j++){
+	$times = 1527782400 + 86400 * $j;
+	$date = date('Y-m-d',$times);
+	var_dump($date);
+}
+
+$os = '0';
+if (isset($os) && $os){
+	var_dump($os);
+}
+
+
+$f1 = '{"2018-06-01-OS-8-requestMoney":110064600,"2018-06-01-OS-8-successMoney":1519000,"2018-06-01-OS-5-requestMoney":923375500,"2018-06-01-OS-5-successMoney":8380400,"2018-06-01-OS-7-requestMoney":461482500,"2018-06-01-OS-7-successMoney":5709900,"2018-06-01-OS-4-requestMoney":751600300,"2018-06-01-OS-4-successMoney":5306100,"2018-06-01-OS-6-requestMoney":860595600,"2018-06-01-OS-6-successMoney":7696300,"2018-06-01-OS-3-requestMoney":7063600,"2018-06-01-OS-3-successMoney":5400,"2018-06-01-OS-2-requestMoney":12667900,"2018-06-01-OS-2-successMoney":37700,"2018-06-01-OS-9-requestMoney":16700,"2018-06-01-OS-9-successMoney":0,"2018-06-01-OS-A-requestMoney":42900,"2018-06-01-OS-A-successMoney":0,"2018-06-01-OS-u-requestMoney":6400,"2018-06-01-OS-u-successMoney":0} ';
+$f2 = json_decode($f1, true);
+var_dump($f2);
+
+
+for ($i = 300500; $i <= 360000; $i+=5000){
+	 var_dump($i);
+	 echo  '    ' . $i+5000;
+}
+
+var_dump(date('Y-m-d 00:00:00', strtotime('-1 day')));
+
+// $start = date('Y-m-d', strtotime('-1 day'));
+// var_dump($start);
+
+$start = strtotime('2018-06-18');
+var_dump($start);
+
+$end = strtotime(date('Y-m-d'));
+var_dump($end);
+
+// 174343478
+// 173343478
+
+
+
+$imsiArr = array();
+$datas = array(
+		'0'		=> array(
+				'imsi' => '123'
+		),
+		'1'		=> array(
+				'imsi' => '456'
+		),
+		'2'		=> array(
+				'imsi' => '789'
+		),
+);
+foreach ($datas as $key => $data){
+	$imsiArr[] = $data['imsi'];
+}
+var_dump($imsiArr);
+
+$imsiStr = implode(',', $imsiArr);
+
+echo $imsiStr;
+
+$wtt = '2018-06-13-model-cooplad';
+$wttlen = strlen($wtt);
+$wttlena = $wttlen - strlen('2018-06-13-model-');
+var_dump($wttlen);
+$wtt1 = substr($wtt, -$wttlena);
+var_dump($wtt1);
+
+
+var_dump(strlen('2018-06-13-model-cooplad-requestMoney'));
+
+
+$models = substr('2018-06-13-model-cooplad-requestMoney', 17, 7);
+var_dump($models);
+
+var_dump(strlen('O09O6MIFPJ35WBKM'));
+
+var_dump(date('Y-m-d H:i:s', 1529458446));
+
+$start = strtotime(date('Y-m-d', strtotime('-1 day')));
+$end = strtotime(date('Y-m-d'));
+
+var_dump($start); //1529337600
+var_dump($end); //1529424000
+for ($i = $start; $i < $end; $i+=3600){
+	$t = date('Y-m-d H:i:s', $i);
+	var_dump($t);
+}
+
+
+$model = 0;
+if (isset($model) && $model){
+	var_dump($model);
+}
+
+$solidResult = array();
+$solidResult1   = array(
+		'12306','999','0',
+);
+array_push($solidResult, $solidResult1);
+var_dump($solidResult);
+
+$arr = array(
+		'0'	=> '3356',
+		'1'	=> '3821',
+		'2'	=> '3456'
+);
+$arr1 = array(
+		'0'	=> '2345',
+		'1'	=> '3821',
+		'2' => '3356',
+);
+$s = array_diff($arr, $arr1);
+var_dump($arr);
+var_dump($s);
+
+
+var_dump(date('Y-m-d H:i:s', 1529458446));
+
+
+var_dump($_SERVER);
 
 
 
