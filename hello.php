@@ -468,5 +468,116 @@ var_dump(date('Y-m-d H:i:s', 1529458446));
 var_dump($_SERVER);
 
 
+var_dump(urldecode('https://pan.baidu.com/play/video#/video?path=%2FMOVIE%2F1.mkv&t=-1'));
+
+
+$g = json_decode('{"code":"384545","phone":"15622066581","price":"2000","model":"xiaomi","appId":"1007","feetype":"1","cmd_type":"1"}', true);
+echo http_build_query($g);
+
+
+
+var_dump(strlen('/index.php/admin/'));
+
+
+
+$record = preg_match('/(.*)(AdminLists)(.*)/', '/index.php/admin/AdminList/pane/6/ctid/6', $preg);
+var_dump($record);
+var_dump($preg);
+
+
+$array1 = array(
+		'name'	=> 'cindy'
+);
+$array2 = array(
+		'age'	=> 18
+);
+$array3 = array(
+		'job'	=> 'programmer'
+);
+
+$list = array_merge($array1, $array2, $array3);
+var_dump($list);
+
+var_dump(strtotime('2018-07-02 00:00:00'));
+
+
+$h = ' {"MSGTYP":"Report","SEQID":"1160507160","SRCADDR":"13599862151","SRCADDRTYPE":"200","DESTADDR":"106581673310","MSG":"0","TOPID":"MMS","SRVCODE":"170101","LINKID":"1160503213","MASTERID":"10006","CMDID":"03","CORID":"71501","VER":"1.0","MODATE":"2018-07-05 16:28:21.0"}';
+$h1 = json_decode($h, true);
+$h2 = http_build_query($h1);
+var_dump($h2);
+
+
+
+var_dump(urldecode('04%3A4F%3A4C%3A68%3A83%3AE7'));
+
+
+var_dump(urldecode('90%3AB6%3A86%3A73%3A6E%3A85'));
+
+
+var_dump(base64_encode('fUG/4sjhjVfBQWwa3N/okmiJKM+c8ZJKM6Ns2CxiU5x914FBv8Lw+pEGpulTwcdTYjLL+GYfUh1rK7IQ/WQ2wHh++IHA/6/sYRCf6BTHelef7z5gIUDRXi+7C1h+rMW8Mb+dPBz/+Gk3MHaux52nOlw=='));
+
+
+var_dump(base64_decode('ZlVHLzRzamhqVmZCUVd3YTNOL29rbWlKS00rYzhaSktNNk5zMkN4aVU1eCtYb08xUmdaTU1ycjJxSWhOd29PSERFbjRtNkk3ZkR5SlhNY2xPU0RIQmxXN20vbmtyNzRLdEwvTFhSdjNvUCtDTEtSYjRWSkxXSEhCaHdIWDloaFNPNDBseDFpcm0vUytvMnhTaTNBdGFYdz09'));
+
+var_dump(strlen('fUG/4sjhjVfBQWwa3N/okmiJKM+c8ZJKM6Ns2CxiU5x+XoO1RgZMMrr2qIhNwoOHDEn4m6I7fDyJXMclOSDHBlW7m/nkr74KtL/LXRv3oP+CLKRb4VJLWHHBhwHX9hhSO40lx1irm/S+o2xSi3AtaXw=='));
+
+var_dump(base64_decode('NzgxYjE4NmVjMGE4NmE1MDcxNzA5NTc0NzU4NzA4NDSxvsz1w+K30bbM0MXTw9Pav+zL2bXHwryjrMfrzvDQ3rjE'));
+
+$dictStr = '{"took": 23, "timed_out": false, "_shards": {"total": 5, "successful": 5, "skipped": 0, "failed": 0}, "hits": {"total": 4, "max_score": 1.0, "hits": [{"_index": "articleindex", "_type": "doctype", "_id": "0", "_score": 1.0, "_source": {"articleid": "2", "title": "title", "content": "content"}}, {"_index": "articleindex", "_type": "doctype", "_id": "2", "_score": 1.0, "_source": {"articleid": "2", "title": "wtttest", "content": "wtttest"}}, {"_index": "articleindex", "_type": "doctype", "_id": "1", "_score": 1.0, "_source": {"articleid": "2", "title": "title", "content": "content"}}, {"_index": "articleindex", "_type": "doctype", "_id": "3", "_score": 1.0, "_source": {"articleid": "2", "title": "hello", "content": "world"}}]}}';
+
+$dictArr = json_decode($dictStr, true);
+var_dump($dictArr);
+
+
+$mobile = 15508227316;
+if(!$mobile) {
+	echo $mobile;
+}else {
+	echo '123';
+}
+
+
+$confirm_data = array(
+		'app_id'		=> 113,
+		'order_id'		=> 'wtttest',
+		'send_status'	=> 2,
+		'num'			=> 1,
+		'timestamp'		=> time(),
+);
+$a = ksort($confirm_data);
+var_dump($confirm_data);
+
+
+$confirm_sign = strtoupper(md5(http_build_query($confirm_data) . '&signkey=GtxF8q5lJh97pL1v'));
+
+var_dump($confirm_sign);
+
+$confirm_data['sign']	= $confirm_sign;
+
+
+var_dump($confirm_data);
+
+
+$data123 = [
+		'cno'		=> '1',
+		'feeid'		=> '5',
+		'mobileno '	=> 2,
+		'orderno'	=> '2',
+		'Content'	=> 'wtt test',
+		'imsi'		=> 460,
+		'imei'		=> 460,
+];
+var_dump(http_build_query($data123));
+
+
+$la = 'http://47.104.92.235:8080/Lakala/client/upMob.do?cno=sn50004FYYD&feeid=5&mobileno+=15982585088&orderno=uDrgb9VbkM&Content=%E5%B0%8A%E6%95%AC%E7%9A%84%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8%E5%AE%A2%E6%88%B7%EF%BC%8C%E8%8B%8F%E5%AE%81%E6%98%93%E8%B4%AD5%E5%85%83%E7%94%B5%E5%AD%90%E5%8D%A1%E9%9C%80%E6%89%A3%E5%87%8F460%E7%A7%AF%E5%88%86%EF%BC%8C%E5%9B%9E%E5%A4%8D75%E5%B0%86%E7%9B%B4%E6%8E%A5%E5%85%85%E5%85%A515982585088%E5%AF%B9%E5%BA%94%E8%B4%A6%E6%88%B7%E3%80%82%E5%A6%82%E6%82%A8%E4%B8%8D%E7%A1%AE%E5%AE%9A%E8%B4%A6%E6%88%B7%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE%EF%BC%8C%E5%8F%AF%E7%99%BB%E9%99%86%E7%A4%BC%E5%93%81%E4%BD%BF%E7%94%A8%E5%B9%B3%E5%8F%B0%E6%9F%A5%E7%9C%8B%E3%80%82%E8%AF%B7%E6%82%A8%E5%9C%A830%E5%88%86%E9%92%9F%E5%86%85%E5%AE%8C%E6%88%90%E6%9C%AC%E6%AC%A1%E6%93%8D%E4%BD%9C%EF%BC%8C%E5%A6%82%E6%9C%89%E7%96%91%E9%97%AE%E5%8F%AF%E8%87%B4%E7%94%B510086%E3%80%82%E3%80%90%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8%E7%A7%AF%E5%88%86%E8%AE%A1%E5%88%92%E3%80%91&imsi=460029825242544&imei=860191039281544';
+$las = urldecode($la);
+var_dump($las);
+
+
+
+
+
+
 
 ?>
