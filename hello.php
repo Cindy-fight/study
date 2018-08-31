@@ -574,8 +574,68 @@ $la = 'http://47.104.92.235:8080/Lakala/client/upMob.do?cno=sn50004FYYD&feeid=5&
 $las = urldecode($la);
 var_dump($las);
 
+var_dump(urldecode('100%25230089'));
+
+$str = '0120000000';
+var_dump($str[2]);
 
 
+$g = date('G');
+var_dump($g);
+
+$md5 = md5('outs-inner-interface-by-wtt');
+var_dump($md5);
+
+$preg = preg_match('/(.*)(\d{6})(.*)/', '【联通沃音乐】345079，您的验证码60秒内有效，请尽快输入', $match);
+var_dump($match);
+
+// echo microtime();
+// echo "\n";
+// echo time();
+
+// 获取当前毫秒时间戳
+function getMillisecond() {
+	list($msec, $sec) = explode(' ', microtime());
+	$msectime =  (float)sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
+	return $msectime;
+}
+
+var_dump(getMillisecond());
+
+
+// $second = getMillisecond();
+// $spSign = substr($second, 3);
+// var_dump($spSign);
+
+$isOut = FALSE;
+$spSignPre = 'ABC';
+$spSign = 'ABC@WTTTEST';
+$spSign1 = substr($spSign, strlen($spSignPre));
+var_dump($spSign1);
+if (preg_match('/^@(.*)/', $spSign1)){
+	$isOut = TRUE;
+}
+var_dump($isOut);
+
+var_dump($_SERVER);
+
+$groups = array();
+array_push($groups, 'cid');
+array_push($groups, 'mid');
+array_push($groups, 'substr(from_unixtime(day),1,7)');
+
+if (count($groups) > 0){
+	$groupStr = implode(",", $groups);
+}
+
+var_dump($groups);
+var_dump($groupStr);
+
+
+$jsonStr = '{"sid":"B_Ef1Ln17XFan7","tradeid":"131a5471574544838f0def30b18e69c2","price":"1000","actiontime":"20180828144051","totalprice":"1000","status":"0","rtime":"1535438488109","extraInfo":"","signature":"c7ed85372b22fee74efb07e859055ea03d104ff8"}';
+$jsonArr = json_decode($jsonStr, true);
+$strs = http_build_query($jsonArr);
+var_dump($strs);
 
 
 
