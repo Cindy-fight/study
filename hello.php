@@ -639,5 +639,104 @@ var_dump($strs);
 
 
 
+$successRate = floor(456*10000)/10000/100;
+// $result1 = $successRate.'%';
+echo $successRate;
+
+$base = "ZzNUazU0Y2JIcUU5S1U0YllXWkQzN0dSTmRQQkZSRFdqWjdKK21GODBkZjVlbFRtM0ZDYmlMeVZUV1lya3gxSWtieHZhTnI4alptbTlPRjNyejdZRnRiMnZFOUtya21rL3BIajdmamw0OUNyRDJLblZrZG9YRnNuS1JjWjJraGI2";
+var_dump(base64_decode($base));
+
+echo '<feff>';
+
+
+// $response = MP_Common::httpRequest($api);
+// $result_preg = preg_match('/^\xEF\xBB\xBF/{(.*)}', $response, $match);
+// $result_match = '{' .$match[1] . '}';
+
+var_dump(base64_decode('data=VvjRtWa/6Y/k1CKZLsTnesnC4xeuCw16BuDvVihb5b/g9oXzvaT2aQTNw53PX+PDdRbcCJz3MrA='));
+
+
+$rand = mt_rand(0,9);
+var_dump($rand);
+
+$rand1 = rand(0,9);
+var_dump($rand1);
+
+
+$apiStr = '{"url":"http:\/\/211.147.238.51:7080\/mobile\/pay_wap.jsp?","data":{"mobile":"13596337502","imsi":"460000801354482","imei":"110797018159218","ip":"183.61.51.60","exdata":"6632325941","appid":"300011860381","paycode":"30001186038101","cpid":"00121"}}';
+$apiArr = json_decode($apiStr, true);
+var_dump($apiArr);
+
+echo 'wtt';
+
+$apiRes = $apiArr['url'] . http_build_query($apiArr['data']);
+var_dump($apiRes);
+
+
+$response = '{"result":3,"message":"��ʱ�����ظ�����"}';
+if (preg_match('/(.*)message(.*)/', $response)){
+	$result_preg = preg_match('/(.*)\,\"message(.*)/', $response, $wtts);
+	$result_match = $wtts[1] . '}';
+	$response = $result_match;
+}
+
+var_dump($response);
+
+var_dump(json_decode($response, true));
+
+
+// var_dump($wtts);
+
+// var_dump($result_match);
+
+// var_dump(json_decode($result_match, true));
+
+$mobile123 = '';
+if (preg_match('/^1390/', $mobile123)){
+	echo '此手机号为屏蔽号码';
+}
+
+var_dump(strlen(''));
+
+
+$arrays = array(12,10, 8, 9, 10, 45, 4, 5, 5, 5, 5, 3);
+$arrays = array_unique($arrays);
+var_dump($arrays);
+
+
+var_dump(urldecode('WRF%2523484%25235%2523222'));
+
+$provinceArrKey = array();
+array_push($provinceArrKey[100][], 16);
+var_dump($provinceArrKey);
+
+
+$testArr = array();
+if (count($testArr) <= 0){
+	echo 1;
+}else {
+	echo 2;
+}
+
+
+$ids = array(12, 13, 12, 13, 15, 16, 17, 18);
+$ida = implode(',', $ids);
+$ida = '(' . $ida . ')';
+var_dump($ida);
+
+
+$cmd1 = htmlentities('021#2#U582#888#987#90fbd73ddabeded1');
+var_dump($cmd1);
+
+
+
+var_dump(urldecode('YX%2C265136%2C6%2CE0C7%2C1800532%2C613004%2CM5G60000000Z8YL8F86IME'));
+
+
+
+var_dump(base64_encode('05bdfb7a06bf32674a0cc0c7017da7afd[咪咕一键登录]'));
+
+var_dump(base64_decode('MDViZGZiN2EwNmJmMzI2NzRhMGNjMGM3MDE3ZGE3YWZkW+WSquWSleS4gOmUrueZu+W9lV0='));
+
 
 ?>
